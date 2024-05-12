@@ -1,0 +1,12 @@
+version: 0.2
+
+phases:
+  build:
+    on-failure: ABORT
+    commands:
+      - CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o pkmnquizbot .
+
+artifacts:
+  files:
+    - pkmnquizbot
+    - pokemon.csv
